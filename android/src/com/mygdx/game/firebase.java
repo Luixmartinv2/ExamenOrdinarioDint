@@ -43,6 +43,7 @@ public class firebase extends Fragment {
         btnLogin.setOnClickListener(events);
         btnregistro.setOnClickListener(events);
 
+
     return v;
     }
 
@@ -53,6 +54,7 @@ public class firebase extends Fragment {
 class LoginFragmentEvent implements View.OnClickListener{
 
     private firebase fb;
+    AndroidLauncher androidLauncher;
 
     public LoginFragmentEvent(firebase fb ){
 
@@ -64,6 +66,8 @@ class LoginFragmentEvent implements View.OnClickListener{
         if (v.getId() == this.fb.btnLogin.getId()) {
             this.fb.listener.FbBtnlogin(this.fb.etUserName.getText().toString(),
             this.fb.etPasword.getText().toString());
+
+           androidLauncher.initialize(new MyGdxGame());//Aqui cuando se de el login se pasara al juego
         }else if (v.getId() == this.fb.btnregistro.getId()) {
             this.fb.listener.FbBtnlogin(this.fb.etPasword.getText().toString(),
             this.fb.etPasword.getText().toString());

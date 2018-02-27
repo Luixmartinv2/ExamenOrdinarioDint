@@ -23,8 +23,10 @@ public abstract class AndroidLauncher extends AndroidApplication {
 		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
 
 		initialize((ApplicationListener) new firebase(), config);
-		initialize(new MyGdxGame(), config);
+		//initialize(new MyGdxGame(), config);
 	}
+
+
 
 /**fragments
 	fb =(firebase)getSupportFragmentManager().findFragmentById(R.id.fragmentFb);
