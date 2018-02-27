@@ -44,19 +44,7 @@ public class Pelota {
 
 
         spriteBatch.draw(img, x, y, 100, 100);
-
-
-
-            @Override
-            public void onClick(View v) {
-                pbarProgreso.sleep(1000);;
-                pbarProgreso.setProgress(0);
-
-
-
-
-            }
-        });
+        
 
 }
 
@@ -87,8 +75,6 @@ public class Pelota {
     }
 }
 
-class pbarProgreso implements OnClickListener {
-
-}
+//class pbarProgreso implements OnClickListener {}
 
 
