@@ -1,8 +1,9 @@
 package com.mygdx.game;
 
 
+import android.annotation.SuppressLint;
+import android.app.Fragment;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 
+@SuppressLint("NewApi")
 public class Registro extends Fragment {
 
     public EditText etReUserName ;
@@ -33,12 +35,12 @@ public class Registro extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v= inflater.inflate(R.layout.fragment_registro, container, false);
+        View v= inflater.inflate(R.layout.Re, container, false);
 
-        etReUserName= v.findViewById(R.id.etReUserName);
-        etRePasword= v.findViewById(R.id.etRePasword);
+        etReUserName= v.findViewById(R.id.ReUserName);
+        etRePasword= v.findViewById(R.id.RePasword);
         btnAceptar=(Button) v.findViewById(R.id.btnAceptar);
-        btnCancelar= v.findViewById(R.id.btnCanelar);
+        btnCancelar= v.findViewById(R.id.btnCancelar);
 
         events= new RegistroFragmentEvents(this);
         btnAceptar.setOnClickListener(events);
