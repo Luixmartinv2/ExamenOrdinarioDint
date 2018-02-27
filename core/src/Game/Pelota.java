@@ -44,7 +44,7 @@ public class Pelota {
 
 
         spriteBatch.draw(img, x, y, 100, 100);
-        
+
 
 }
 
