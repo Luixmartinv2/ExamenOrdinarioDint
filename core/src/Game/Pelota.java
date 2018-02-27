@@ -15,13 +15,14 @@ import static com.badlogic.gdx.controllers.ControlType.button;
 public class Pelota {
 
     Texture img; // variable que representa la img de la pelota que es de tipo textura
-    int x, y, z;
+    int x, y, z, marcador;
 
     public Pelota() {
         img = new Texture("pelota.png");
         x = 50;
         y = 50;
         z = 50;
+        marcador=0;
     }
 
     public void draw(SpriteBatch spriteBatch) {
@@ -50,9 +51,21 @@ public class Pelota {
 
         final int FPS = 40;
         TimerTask tas = new timerPelota();
-        tas.scheduleAtFixedRate(timerPelota, 0, 1000/FPS);
+        //tas.scheduleAtFixedRate(timerPelota, 0, 1000/FPS);
+        while (marcador<10000)
+        try {
+            //aqui se asignan puntos,
+            if(marcador==10000){
+                //win
+            }else {
+            tas.wait(60000);
+            
+            marcador++;}
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
-}
+    }
 
 
 
@@ -82,7 +95,7 @@ public class Pelota {
 }
 
 class timerPelota extends TimerTask {
-    Timer timer = new Timer();
+
     Pelota myBall;
 
     public void run() {
