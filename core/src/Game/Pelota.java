@@ -5,12 +5,15 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import java.awt.Button;
+import java.util.TimerTask;
 
+import javax.swing.Timer;
 import javax.swing.text.View;
 
 import static com.badlogic.gdx.controllers.ControlType.button;
 
 public class Pelota {
+
     Texture img; // variable que representa la img de la pelota que es de tipo textura
     int x, y, z;
 
@@ -45,6 +48,9 @@ public class Pelota {
 
         spriteBatch.draw(img, x, y, 100, 100);
 
+        final int FPS = 40;
+        TimerTask tas = new timerPelota();
+        tas.scheduleAtFixedRate(timerPelota, 0, 1000/FPS);
 
 }
 
@@ -75,6 +81,14 @@ public class Pelota {
     }
 }
 
-//class pbarProgreso implements OnClickListener {}
+class timerPelota extends TimerTask {
+    Timer timer = new Timer();
+    Pelota myBall;
+
+    public void run() {
+        //calculate the new position of myBall
+
+    }
+}
 
 

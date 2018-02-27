@@ -43,7 +43,7 @@ public abstract class AndroidLauncher extends AndroidApplication {
 
 	}
 
-	
+
 
 
 
