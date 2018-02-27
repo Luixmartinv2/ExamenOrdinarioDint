@@ -15,14 +15,15 @@ import static com.badlogic.gdx.controllers.ControlType.button;
 public class Pelota {
 
     Texture img; // variable que representa la img de la pelota que es de tipo textura
-    int x, y, z, marcador;
+    int x, y, z, marcador, M;
 
     public Pelota() {
         img = new Texture("pelota.png");
         x = 50;
         y = 50;
         z = 50;
-        marcador=0;
+        marcador=0;//sera el marcador
+        M=1;//es para marcar los aumentos de velocidad
     }
 
     public void draw(SpriteBatch spriteBatch) {
@@ -33,17 +34,17 @@ public class Pelota {
 
 
        if(Gdx.input.getAccelerometerY()<0){
-           x +=(Gdx.input.getAccelerometerY());
+           x +=(Gdx.input.getAccelerometerY()*M);
        }else if(Gdx.input.getAccelerometerY()>0){
-           x +=Gdx.input.getAccelerometerY();
+           x +=Gdx.input.getAccelerometerY()*M;
        }
 
        if(Gdx.input.getAccelerometerX()<0){
 
-           y-=Gdx.input.getAccelerometerX();
+           y-=Gdx.input.getAccelerometerX()*M;
 
        }else if(Gdx.input.getAccelerometerX()>0){
-           y-= (Gdx.input.getAccelerometerX());
+           y-= (Gdx.input.getAccelerometerX()*M);
        }
 
 
@@ -59,6 +60,7 @@ public class Pelota {
                 //win
             }else {
             tas.wait(60000);
+            M++;//aqui aumentamos la velocidad
 
             marcador++;}
         } catch (InterruptedException e) {
