@@ -59,7 +59,7 @@ public class Pelota {
                 //win
             }else {
             tas.wait(60000);
-            
+
             marcador++;}
         } catch (InterruptedException e) {
             e.printStackTrace();
