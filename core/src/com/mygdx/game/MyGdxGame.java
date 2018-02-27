@@ -8,8 +8,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import java.util.TimerTask;
 
-import Game.Pelota;
-import Game.timerPelota;
+
 
 public class MyGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;
