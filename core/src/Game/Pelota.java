@@ -4,6 +4,12 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+import java.awt.Button;
+
+import javax.swing.text.View;
+
+import static com.badlogic.gdx.controllers.ControlType.button;
+
 public class Pelota {
     Texture img; // variable que representa la img de la pelota que es de tipo textura
     int x, y, z;
@@ -19,6 +25,8 @@ public class Pelota {
         /*
         Hacemos uso del acelerómetro, dependiendo de la posición que nos marque este, iremos modificando la x e y
          */
+
+
 
        if(Gdx.input.getAccelerometerY()<0){
            x +=(Gdx.input.getAccelerometerY());
@@ -37,7 +45,22 @@ public class Pelota {
 
         spriteBatch.draw(img, x, y, 100, 100);
 
-    }
+
+
+            @Override
+            public void onClick(View v) {
+                pbarProgreso.sleep(1000);;
+                pbarProgreso.setProgress(0);
+
+
+
+
+            }
+        });
+
+}
+
+
 
     public Texture getImg() {
         return img;
@@ -64,9 +87,8 @@ public class Pelota {
     }
 }
 
-class Click implements OnClickListener{
+class pbarProgreso implements OnClickListener {
 
-
-            Gdx.input.getAccelerometerX()
-            Gdx.input.getAccelerometerY()
 }
+
+
